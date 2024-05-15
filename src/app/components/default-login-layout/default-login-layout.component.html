@@ -1,14 +1,23 @@
 <main>
   <section class="forms-section">
-    <img src="" alt="Summit">
-    <h2></h2>
-    <button></button>
-    <div>
-      <span>or</span>
+    <h1>Summit</h1>
+    <h2>{{title}}</h2>
+    <ng-content></ng-content>
+    
+    <div class="Btn-Wrapper">
+      <button class="Btn-primary">{{primaryBtnText}}</button>
+      <div class="divider">
+        <div class="divline"></div>
+        <span>or</span>
+        <div class="divline"></div>
+      </div>
+      <button class="Btn-secondary">{{secondaryBtnText}}</button>
     </div>
   </section>
   <section class="main-section">
-    <h1>Summit-Web</h1>
+    <h1>Summit</h1>
+    <h3>Simplificando Descobertas </h3>
+
     <img src="/assets/svg/Summit.svg" width="300" alt="">
   </section>
 </main>
