@@ -5,7 +5,12 @@
     <ng-content></ng-content>
     
     <div class="Btn-Wrapper">
-      <button class="Btn-primary" (click)="submit()">{{primaryBtnText}}</button>
+        <button 
+          class="Btn-primary" 
+          (click)="submit()"
+          [disabled]="disablePrimaryBtn">
+          {{primaryBtnText}}
+          </button>      
       <div class="divider">
         <div class="divline"></div>
         <span>or</span>

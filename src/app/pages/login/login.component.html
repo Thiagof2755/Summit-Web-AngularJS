@@ -3,6 +3,9 @@
     primaryBtnText="Entrar"
     secondaryBtnText="Cadastrar"
     (submit)="submit()"
+    (navigate)="navigate()"
+    [disablePrimaryBtn]="!loginForm.valid"
+    
 >
 
     <form [formGroup]="loginForm">
