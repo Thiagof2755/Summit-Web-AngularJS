@@ -1,0 +1,25 @@
+<div class="home-container">
+    <div class="header">
+        <h1 class="welcome-title">DashBoard de Eventos</h1>
+        <button class="create-event-button" (click)="navigateToCreateEvent()">Criar Evento</button>
+        <button class="logout-button" (click)="logout()">Logout</button>
+    </div>
+
+    <div class="eventLOADING" *ngIf="isLoading">Carregando eventos...</div>
+    <div *ngIf="!isLoading && events.length === 0">Nenhum evento encontrado.</div>
+    <div *ngIf="!isLoading && events.length > 0" class="event-list">
+        <div *ngFor="let event of events" class="event-item" (click)="viewEventDetails(event.id)">
+            <img [src]="event.images[0]?.file" alt="Event Image" class="event-image">
+            <div class="event-content">
+                <h3 class="event-name">{{ event.name }}</h3>
+                <p class="event-description">{{ event.description }}</p>
+                <div class="event-details">
+                    <span class="event-date">{{ event.initialdate | date }}</span>
+                    <span class="event-location">{{ event.eventaddress?.place }}, {{ event.eventaddress?.city }}, {{
+                        event.eventaddress?.uf }}</span>
+                </div>
+                <button class="delete-event-button" (click)="deleteEvent(event.id, $event)">Excluir Evento</button>
+            </div>
+        </div>
+    </div>
+</div>

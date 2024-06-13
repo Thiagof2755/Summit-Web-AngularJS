@@ -1,0 +1,26 @@
+<div class="event-detail-container" *ngIf="!isLoading && event">
+    <div class="event-header">
+        <h1>{{ event.name }}</h1>
+        <p class="event-date">{{ event.initialdate | date }}</p>
+    </div>
+    <div class="event-content">
+        <div class="event-image-wrapper">
+            <img [src]="event.images[0]?.file" alt="Event Image" class="event-image">
+        </div>
+        <div class="event-details">
+            <h2>Detalhes do Evento</h2>
+            <p class="event-description">{{ event.observation }}</p>
+            <p class="event-status"><strong>Status:</strong> {{ event.status }}</p>
+            <p class="event-location"><strong>Local:</strong> {{ event.eventaddress?.place }}, {{
+                event.eventaddress?.city }}, {{ event.eventaddress?.uf }}</p>
+            <p class="event-address"><strong>Endereço:</strong> {{ event.eventaddress?.street }}, {{
+                event.eventaddress?.number }}, {{ event.eventaddress?.district }}</p>
+            <p class="event-complement"><strong>Complemento:</strong> {{ event.eventaddress?.complement }}</p>
+            <p class="event-zip"><strong>CEP:</strong> {{ event.eventaddress?.zipCode }}</p>
+            <p class="event-dates"><strong>Data Inicial:</strong> {{ event.initialdate | date }} - <strong>Data
+                    Final:</strong> {{ event.enddate | date }}</p>
+        </div>
+    </div>
+</div>
+<div *ngIf="isLoading" class="loading">Carregando detalhes do evento...</div>
+<div *ngIf="!isLoading && !event" class="error">Erro ao carregar detalhes do evento.</div>

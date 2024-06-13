@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.home-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #282828;
+  border-radius: 15px;
+  margin: 2rem;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    
+    .welcome-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: #f3f3f3;
+      margin: 0;
+    }
+
+    
+    .logout-button {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      background-color: #ff0000;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #9800b3;
+      }
+    }
+  }
+}
+
+.event-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.event-item {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  margin: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  width: 370px;
+  
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .event-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .event-content {
+    padding: 20px;
+
+    .event-name {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #333;
+      text-align: left;
+    }
+
+    .event-description {
+      font-size: 16px;
+      font-weight: 400;
+      margin-bottom: 10px;
+      color: #666;
+    }
+
+    .event-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .event-date,
+      .event-location {
+        font-size: 14px;
+        font-weight: 500;
+        color: #999;
+      }
+    }
+
+    .delete-event-button {
+        margin-top: 15px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      background-color: #ff4d4d;
+      border: none;
+      border-radius: 5px;
+      padding: 15px 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      //botao a esquerda
+      display: flex;
+      margin-left: 10px
+
+    }
+  }
+}
+
+.eventLOADING {
+  color: #ffffff;
+}
+.create-event-button {
+    position: fixed; /* Altere para fixed */
+    bottom: 20px;
+    right: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #ff0077;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #9800b3;
+    }
+  }

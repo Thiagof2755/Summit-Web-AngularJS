@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { DefaultLoginLayoutComponent } from '../../components/default-login-layout/default-login-layout.component';
 import { FormGroup, ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
-import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 import { Router } from '@angular/router'; 
 import { LoginService } from '../../services/login.service';
 import { ToastrService } from 'ngx-toastr';
-
-
+import { DefaultLoginLayoutComponent } from '../../components/default-login-layout/default-login-layout.component';
+import { PrimaryInputComponent } from '../../components/primary-input/primary-input.component';
 
 @Component({
   selector: 'app-login',
@@ -29,7 +27,6 @@ export class LoginComponent {
     private router: Router,
     private loginService: LoginService,
     private toastService: ToastrService
-  
   ) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -39,13 +36,14 @@ export class LoginComponent {
 
   submit() {
     this.loginService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
-      next: () => this.toastService.success('Login efetuado com sucesso!'), 
-      error: () => this.toastService.error('Email ou senha inválidos!'),
-      
-    })
+      next: () => {
+        this.toastService.success('Login efetuado com sucesso!');
+        this.router.navigate(['/home']);
+      },
+      error: () => this.toastService.error('Email ou senha inválidos!')
+    });
   }
-
-
+  
   navigate() {
     this.router.navigate(['/register']); 
   }
