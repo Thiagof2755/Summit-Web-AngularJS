@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { tap } from 'rxjs/operators';
+import { tap } from 'rxjs';
 import { AuthService } from './auth.service';
 
 interface LoginResponse {
@@ -12,8 +12,7 @@ interface LoginResponse {
   providedIn: 'root'
 })
 export class LoginService {
-  // Use o proxy configurado
-  private apiUrl = '/api';
+  private apiUrl = 'https://3.97.199.173:8080/summit';
 
   constructor(
     private httpClient: HttpClient,

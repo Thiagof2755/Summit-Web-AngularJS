@@ -1,8 +1,0 @@
-{
-    "rewrites": [
-        {
-            "source": "http://3.97.199.173:8080/summit/",
-            "destination": "$1"
-        }
-    ]
-}

@@ -8,7 +8,7 @@ import { catchError, map, switchMap, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class EventService {
-  private apiUrl = '/api';  // Use o proxy configurado
+  private apiUrl = 'https://3.97.199.173:8080/summit';
 
   constructor(
     private httpClient: HttpClient,
@@ -66,15 +66,16 @@ export class EventService {
     );
   }
 
-  deleteEvent(eventId: number): Observable<any> {
-    return this.httpClient.delete<any>(`${this.apiUrl}/event/${eventId}`).pipe(
-      tap(response => {
-        console.log('Evento excluído com sucesso', response);
-      }),
-      catchError(error => {
-        console.error('Erro ao excluir evento', error);
-        return throwError(error);
-      })
-    );
-  }
+deleteEvent(eventId: number): Observable<any> {
+  return this.httpClient.delete<any>(`${this.apiUrl}/event/${eventId}`).pipe(
+    tap(response => {
+      console.log('Evento excluído com sucesso', response);
+    }),
+    catchError(error => {
+      console.error('Erro ao excluir evento', error);
+      return throwError(error);
+    })
+  );
+}
+
 }
