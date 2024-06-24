@@ -9,7 +9,7 @@ import { catchError, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class RegisterService {
-  private apiUrl = 'https://localhost:3000';
+  private apiUrl = 'http://localhost:3000';
 
   constructor(
     private httpClient: HttpClient,

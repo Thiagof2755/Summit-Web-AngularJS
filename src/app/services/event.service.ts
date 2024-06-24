@@ -8,7 +8,7 @@ import { catchError, map, switchMap, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class EventService {
-  private apiUrl = 'https://3.97.199.173:8080/summit';
+  private apiUrl = 'http://3.97.199.173:8080/summit';
 
   constructor(
     private httpClient: HttpClient,
